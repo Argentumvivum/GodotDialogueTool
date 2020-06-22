@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/DialogueTool/scripts/popup_resizer.gd" type="Script" id=1]
+
+[node name="Popup" type="Popup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -147.0
+margin_top = -58.0
+margin_right = 148.0
+margin_bottom = 183.0
+popup_exclusive = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+margin_right = 295.0
+margin_bottom = 116.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+
+[node name="PopupContainer" type="VBoxContainer" parent="PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 288.0
+margin_bottom = 233.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PopupName" type="Label" parent="PanelContainer/PopupContainer"]
+margin_right = 281.0
+margin_bottom = 14.0
+text = "Popup Name"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/PopupContainer"]
+margin_top = 18.0
+margin_right = 281.0
+margin_bottom = 22.0
+
+[node name="Name" type="TextEdit" parent="PanelContainer/PopupContainer"]
+margin_top = 26.0
+margin_right = 281.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 0, 20 )
+text = "Enter name here"
+
+[node name="HSeparator3" type="HSeparator" parent="PanelContainer/PopupContainer"]
+margin_top = 50.0
+margin_right = 281.0
+margin_bottom = 54.0
+
+[node name="Description" type="TextEdit" parent="PanelContainer/PopupContainer"]
+margin_top = 58.0
+margin_right = 281.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 0, 80 )
+text = "Description"
+wrap_enabled = true
+
+[node name="HSeparator4" type="HSeparator" parent="PanelContainer/PopupContainer"]
+margin_top = 142.0
+margin_right = 281.0
+margin_bottom = 146.0
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="PanelContainer/PopupContainer"]
+margin_top = 150.0
+margin_right = 281.0
+margin_bottom = 170.0
+text = "Select Color"
+
+[node name="HSeparator2" type="HSeparator" parent="PanelContainer/PopupContainer"]
+margin_top = 174.0
+margin_right = 281.0
+margin_bottom = 178.0
+
+[node name="AddButton" type="Button" parent="PanelContainer/PopupContainer"]
+margin_top = 182.0
+margin_right = 281.0
+margin_bottom = 202.0
+text = "Add"
+
+[node name="CancelButton" type="Button" parent="PanelContainer/PopupContainer"]
+margin_top = 206.0
+margin_right = 281.0
+margin_bottom = 226.0
+text = "Cancel"
+[connection signal="resized" from="PanelContainer" to="PanelContainer" method="_on_PanelContainer_resized"]
